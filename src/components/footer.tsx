@@ -5,7 +5,7 @@
 
 export const Footer = () => {
   return (
-    <footer className="bg-violet-400 text-sm text-white flex justify-between px-10 py-10">
+    <footer className="bg-violet-400  text-white flex justify-between px-10 py-10">
       <div >
         <p>&copy; The Spotidados, {new Date().getFullYear()}</p>
         <p>Termos de uso | Musica | Dados</p>
