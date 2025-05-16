@@ -4,21 +4,23 @@ export const Home = () => {
   return (
     <>
       <main
-        className="flex flex-col items-center gap-4 p-4 bg-cover bg-center h-screen"
+        className="flex flex-col items-center gap-4 p-10 bg-cover bg-center h-screen"
         style={{ backgroundImage: `url('/img/backgroud-img.jpg')` }}
       >
-        <div className="w-[247px] h-[61px] rounded-[16px] bg-white">
+        <div className="w-[247px] h-[61px] rounded-[16px] bg-white flex items-center justify-center">
           <h1>Spotidados</h1>
         </div>
-        <div>
+        <div className="w-[247px] h-[166px] rounded-[16px] border-1 border-white text-white">
           <img src="/img/girl.png" alt="" />
         </div>
-        <div className="text-white">
+        <div className="text-white flex flex-col items-center">
           <p>Veja aqui as musicas</p>
           <p>mais escutadas</p>
           <p>ao redor do mundo</p>
         </div>
-        <button>Login</button>
+        <button className="w-[247px] h-[61px] rounded-[16px] border-2 border-white text-white">
+          Login
+        </button>
         <section>
           <div></div>
           <div></div>
