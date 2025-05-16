@@ -1,15 +1,14 @@
 import { Footer } from "../components/footer";
+import { Header } from "../components/header";
 
 export const Home = () => {
   return (
     <>
+    <Header />
       <main
         className="flex flex-col items-center gap-4 p-10 bg-cover bg-center h-screen"
         style={{ backgroundImage: `url('/img/backgroud-img.jpg')` }}
       >
-        <div className="w-[247px] h-[61px] rounded-[16px] bg-white flex items-center justify-center">
-          <h1>Spotidados</h1>
-        </div>
         <div className="w-[247px] h-[166px] rounded-[16px] border-1 border-white text-white">
           <img src="/img/girl.png" alt="" />
         </div>
