@@ -1,3 +1,7 @@
 export const User = () => {
-    
+       return(
+        <>
+        
+        </>
+    )
 }
