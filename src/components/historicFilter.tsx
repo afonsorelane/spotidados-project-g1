@@ -6,7 +6,7 @@
 
 export const HistoricFilter = ({selected, onchange}: FilterProps) =>{
     const filterStyle = (isActive:boolean) =>
-        `px-4 py-2  text-purple-800 roundend-md font-semibold  ${isActive ? "bg-purple-800  text-white  rounded-3xl " : "bg-white text-gray-500"}`;
+        `px-4 py-2  text-purple-800 roundend-md rounded-xl font-semibold  ${isActive ? "bg-purple-800  text-white  rounded-xl " : "bg-white text-gray-500"}`;
 
 return(
     <div className=" px-2 py-6 flex justify-center gap-4 mb-4">

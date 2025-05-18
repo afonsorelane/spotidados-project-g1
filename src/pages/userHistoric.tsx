@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import { Header } from "../components/header"
+import { Footer } from "../components/footer"
 import { HistoricFilter } from "../components/historicFilter"
 import { DailyHistory } from "../components/dailyHistory"
 import { MonthlyHistory } from "../components/monthlyHistoric"
@@ -25,14 +27,22 @@ export const UserHistoric = () => {
         }
 
        return(
-        <>
+    <div
+       className="min-h-screen bg-cover bg-center px-4 sm:px-6 lg:px-8"
+      style={{ backgroundImage: `url('/img/backgroud-img.jpg')` }}
+    >
+        {/* <Header /> */}
 
-
-        <h1 className="  px-2 py-5  flex justify-center text-2xl font bold text-purple-800 mb-4">Histórico do Usuário</h1>
+        <main>
+        <h1 className=" px-2 py-18 text-center text-2xl sm:text-3xl md:text-4xl font-bold text-purple-100 mb-6">
+          Histórico do Usuário
+        </h1>
         <HistoricFilter selected={selectedFilter} onchange={setSelectedFilter}/>
         {historicFilterComponent}
+        </main>
         
-       
-        </>
+       {/* <Footer /> */}
+
+    </div>
     )
 }
