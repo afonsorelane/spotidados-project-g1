@@ -1,7 +1,8 @@
 import { useState } from "react"
 
-import { Header } from "../components/header"
-import { Footer } from "../components/footer"
+//import { Header } from "../components/header"
+//
+// import { Footer } from "../components/footer"
 import { HistoricFilter } from "../components/historicFilter"
 import { DailyHistory } from "../components/dailyHistory"
 import { MonthlyHistory } from "../components/monthlyHistoric"
