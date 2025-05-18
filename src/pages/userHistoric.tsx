@@ -26,7 +26,9 @@ export const UserHistoric = () => {
 
        return(
         <>
-        <h1 className="text-2xl font bold text-cyan-700 mb-4">Histórico do Usuário</h1>
+
+
+        <h1 className="  px-2 py-5  flex justify-center text-2xl font bold text-purple-800 mb-4">Histórico do Usuário</h1>
         <HistoricFilter selected={selectedFilter} onchange={setSelectedFilter}/>
         {historicFilterComponent}
         
