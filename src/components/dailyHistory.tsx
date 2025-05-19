@@ -9,20 +9,19 @@ export const DailyHistory = () => {
 
   return (
     <div className="p-4 space-y-6 text-white font-sans">
-      {/* titulo */}
       <div className="flex justify-center">
         <h1 className="bg-white text-purple-800 font-bold px-6 py-2 rounded-md">
           Diário
         </h1>
       </div>
 
-      {/* Lista de músicas */}
+
       <div className="space-y-4">
         {songs.map((song, index) => (
           <div
             key={index}
-            className="flex justify-between items-center bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl border-2 border-purple-300"
-          >
+          className="flex justify-between items-center bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl border-2 border-purple-300">
+          {/* className="flex justify-between items-center bg-purple-100 p-4 rounded-lg shadow-sm hover:shadow-md transition duration-200"> */}
             <div className="flex items-center gap-4">
               <div className="bg-white rounded-full h-8 w-8 flex items-center justify-center text-purple-700 font-bold">
                 ♫
