@@ -14,7 +14,7 @@ export const Home = () => {
     >
       <Header />
 
-      <main className="flex flex-col items-center gap-4 text-white">
+      <main className="h-screen w-full flex flex-col items-center gap-4 text-white">
         <div className="w-[247px] h-[166px] rounded-[16px] border border-white overflow-hidden">
           <img
             src="/img/girl.png"

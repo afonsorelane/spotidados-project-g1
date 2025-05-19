@@ -21,7 +21,7 @@ export const Login = () => {
     );
 
     if (foundUser) {
-      localStorage.setItem("loggedUserId", String(foundUser.id)); // 👈 salva ID
+      localStorage.setItem("loggedUserId", String(foundUser.id));
       navigate("/userHistoric", { state: { userName: foundUser.name } });
     } else {
       setError("Credenciais inválidas.");
