@@ -32,3 +32,8 @@ export const HistoricFilter = ({ active, setActive }: FilterProps) => {
     </div>
   );
 };
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/CN7
