@@ -1,25 +1,43 @@
-#🎵 SPOTIDADOS 
+# SPOTIDADOS 
 
-Este é um projecto colaborativo desenvolvido por alunos do programa Bytes 4 Future Moz (segunda turma do bootcamp / 2025), concretamente o grupo 1, para demonstrar e visualizar dados históricos de utilizadores, com foco em insights como músicas mais ouvidas em streaming, gêneros preferidos, padrões de escuta e muito mais.
+A **Spotidados** é um projeto colaborativo de uma aplicação mobile desenvolvido pelos alunos da segunda turma do programa Bytes4Future Moz (2025), pertencentes ao Grupo 1. 
+
+O objetivo da aplicação é demonstrar e visualizar dados históricos de utilizadores do Spotify. Entretanto o design da aplicação foi criado com uma identidade visual totalmente original, sem qualquer semelhança com a marca atual do Spotify.
+
 
 
 ## Funcionalidades
 
 - Iniciar sessão
 - Cadastrar novo usuário
-- Pesquisar por gostos de outros usuários 
+- Pesquisar por gostos de outros usuários
+- Fitrar o historico por dia, mes e ano
 
 
-##👥 Membros do Grupo 1
+## Membros do Grupo 1
 
 - Afonso Relane
 - Angel Come
-- Domingos Junior
+- Domingos Timane Jr
 - Emilio Sumbane
 - Jose Nonó
 - Moisés Nhovene 
 
+##  Tecnologias e Ferramentas
 
-##🚀 Como iniciar 
+- TypeScript (limguagem usada)
+- React Native (frontend)
+- Figma (prototipagem e design system)
+- Git + GitHub (colaboração e versionamento)
 
-  https://github.com/afonsorelane/spotidados-project-g1.git
+##  Como Iniciar o Projeto Localmente
+
+**Clonar o repositório**
+git clone https://github.com/afonsorelane/spotidados-project-g1.git
+
+**Instalar as dependências**
+npm install
+
+**Iniciar o projecto**
+npm run dev
+
