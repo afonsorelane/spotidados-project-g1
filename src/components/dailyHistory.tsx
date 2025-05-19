@@ -1,4 +1,6 @@
 export const DailyHistory = () => {
+
+  {/*base de dados e teste */}
   const songs = [
     { title: "Abana", artist: "Dama do Bling", plays: 20 },
     { title: "Falling", artist: "Harry Styles", plays: 12 },
@@ -6,7 +8,7 @@ export const DailyHistory = () => {
     { title: "  Attention", artist: "Charlie Puth", plays: 4 },
   ];
 
-
+{/* dados diarios */}
   return (
     <div className="p-4 space-y-6 text-white font-sans">
       <div className="flex justify-center">
@@ -15,7 +17,7 @@ export const DailyHistory = () => {
         </h1>
       </div>
 
-
+{/* lista de musicas */}
       <div className="space-y-4">
         {songs.map((song, index) => (
           <div
