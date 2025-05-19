@@ -36,11 +36,11 @@ export const Home = () => {
           Login
         </button>
 
-        <section className="grid grid-cols-2 gap-4">
+        <section className="grid grid-cols-2 gap-4 py-8">
           {artists.map((artist) => (
             <div
               key={artist.name}
-              className="w-40 h-56 bg-neutral-900 text-white rounded-xl p-3 hover:bg-neutral-800 transition-all duration-200 cursor-pointer"
+              className="w-40 h-56 bg-purple-800 text-white rounded-xl p-3"
             >
               <img
                 src={artist.image}
