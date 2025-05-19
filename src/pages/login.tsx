@@ -8,7 +8,7 @@ export const Login = () => {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [loggedInUser, setLoggedInUser] = useState<string | null>(null);
+  const [loggedInUser] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -21,12 +21,10 @@ export const Login = () => {
     );
 
     if (foundUser) {
-      setLoggedInUser(foundUser.name);
-      setError("");
-      navigate("/userHistoric");
+      localStorage.setItem("loggedUserId", String(foundUser.id));
+      navigate("/userHistoric", { state: { userName: foundUser.name } });
     } else {
-      setLoggedInUser(null);
-      setError("Usuário ou senha incorretos.");
+      setError("Credenciais inválidas.");
     }
   };
 
@@ -38,9 +36,11 @@ export const Login = () => {
       <div>
         <div>
           <header className="text-white flex justify-between mb-4">
-            <button className="flex items-center gap-1">
-              <ArrowLeft />
-              Voltar
+            <button
+              className="flex items-center gap-1"
+              onClick={() => navigate("/")}
+            >
+              <ArrowLeft size={20} />
             </button>
             <a href="/register" className="hover:underline">
               Sign up
