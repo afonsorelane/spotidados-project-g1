@@ -6,10 +6,7 @@ export const FooterUser = () => {
 
   return (
     <footer className="bg-purple-800  text-white flex justify-between">
-      <button
-        className="flex-col items-center gap-1"
-        onClick={() => navigate("/userHistoric")}
-      >
+      <button className="" onClick={() => navigate("/userHistoric")}>
         <House size={32} />
         Início
       </button>
@@ -17,7 +14,6 @@ export const FooterUser = () => {
         <User size={32} />
         Casa
       </button>
-
       <button className="flex-col gap-1" onClick={() => navigate("/search")}>
         <MagnifyingGlass size={32} />
         Pesquisar
