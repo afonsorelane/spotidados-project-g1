@@ -1,8 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { artists } from "../data/artistis";
 
 export const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div
       className="min-h-screen bg-cover bg-center"
@@ -25,7 +29,10 @@ export const Home = () => {
           <p>ao redor do mundo</p>
         </div>
 
-        <button className="w-[247px] h-[61px] rounded-[16px] border-2 border-white text-white">
+        <button
+          onClick={() => navigate("/login")}
+          className="w-[247px] h-[61px] rounded-[16px] border-2 border-white text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition cursor-pointer"
+        >
           Login
         </button>
 
