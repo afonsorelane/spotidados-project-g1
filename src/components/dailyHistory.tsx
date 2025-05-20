@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { CalendarWeek } from "./calendarWeek";
+//import { useState } from "react";
+//import { CalendarWeek } from "./calendarWeek";
 
 export const DailyHistory = () => {
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+  // const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   const songs = [
     { title: "Abana", artist: "Dama do Bling", plays: 20 },
@@ -17,7 +17,7 @@ export const DailyHistory = () => {
       </div>
 
       {/* Novo calendário horizontal */}
-      <CalendarWeek selectedDate={selectedDate} onChange={setSelectedDate} />
+      {/* <CalendarWeek selectedDate={selectedDate} onChange={setSelectedDate} /> */}
 
       {/* Lista de músicas */}
       <div className="space-y-4">
