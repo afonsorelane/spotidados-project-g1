@@ -5,15 +5,12 @@ export const Header = () => {
     <header className="flex items-center justify-between px-4 py-10">
       <div className="flex-1 flex justify-center">
         <div className="w-[247px] h-[61px] rounded-[16px] bg-white flex items-center justify-center">
-          <h1 className="ml-2 font-bold text-purple-800 text-lg">Spotidados</h1>
+          <h1 className="ml-2 font-bold text-black text-lg">Spotidados</h1>
           <div className="relative w-12 h-12">
-            <Headphones
-              size={48}
-              className="text-purple-800 absolute inset-0"
-            />
+            <Headphones size={48} className="text-black absolute inset-0" />
             <ChartBar
               size={20}
-              className="text-purple-800 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="text-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             />
           </div>
         </div>

@@ -1,13 +1,11 @@
 export const WeeklyHistory = () => {
-
-  {/*base de dados de teste */}
   const songs = [
     { weekDay: "Segunda-feira", track: "Abana - Dama do Bling", plays: 22 },
     { weekDay: "Terça-feira", track: "Senhor Incrível - Telio", plays: 17 },
     { weekDay: "Quarta-feira",track: "Falling - Harry Styles", plays: 4 },
     { weekDay: "Quinta-feira",track: "Attention - Charlie Puth", plays: 4 },
   ];
-{/*dados semanais */}
+
   return (
     <div className="p-4 space-y-6 text-white font-sans">
       {/* titulo */}
