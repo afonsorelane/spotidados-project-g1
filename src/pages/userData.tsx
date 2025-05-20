@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { users } from "../data/users";
-import { FooterUser } from "../components/footer-user";
+import { FooterUser } from "../components/FooterUser";
 
 export const UserData = () => {
   const [user, setUser] = useState<null | (typeof users)[0]>(null);
@@ -44,11 +44,3 @@ export const UserData = () => {
     </div>
   );
 };
-
-
-
-<div>
-  <p>
-    
-  </p>
-</div>
