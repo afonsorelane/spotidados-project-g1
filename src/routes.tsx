@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home, UserHistoric, Search, Register, Login, UserData } from "./pages";
-// import { DailyStats } from "./pages/dailyStats";
+import { DailyStats } from "./pages/dailyStats";
 
 const router = createBrowserRouter([
   {
@@ -27,10 +27,10 @@ const router = createBrowserRouter([
     path: "/userData",
     element: <UserData />,
   },
-  // {
-  //   path: "/dailyStats",
-  //   element: <DailyStats />,
-  // },
+  {
+    path: "/dailyStats",
+    element: <DailyStats />,
+  },
   
 ]);
 
