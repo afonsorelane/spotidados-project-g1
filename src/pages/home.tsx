@@ -31,7 +31,7 @@ export const Home = () => {
 
         <button
           onClick={() => navigate("/login")}
-          className="w-[247px] h-[61px] rounded-[16px] text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition cursor-pointer"
+          className="w-[247px] h-[61px] rounded-[16px] text-lg font-semibold text-white bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition cursor-pointer"
         >
           Login
         </button>

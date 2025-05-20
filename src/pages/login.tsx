@@ -104,7 +104,7 @@ export const Login = () => {
           )}
 
           <button
-            className="w-full text-white text-lg font-semibold py-2 mb-4 rounded bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition cursor-pointer"
+            className="w-full text-white text-lg font-semibold py-2 mb-4 rounded bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition cursor-pointer"
             type="submit"
           >
             Log In
