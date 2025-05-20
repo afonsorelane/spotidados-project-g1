@@ -1,9 +1,8 @@
 import { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { CalendarWeek } from "./calendarWeek";
 
 export const DailyHistory = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   const songs = [
     { title: "Abana", artist: "Dama do Bling", plays: 20 },
@@ -13,18 +12,14 @@ export const DailyHistory = () => {
 
   return (
     <div className="p-4 space-y-6 text-white font-sans">
-      {/* Cabeçalho com calendário  */}
-      <div className="flex justify-between items-center">
+      <div className="flex justify-center">
         <h1 className="text-xl font-bold">Histórico Diário</h1>
-         <DatePicker
-        selected={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
-        className="text-purple-800 px-3 py-1 rounded-md"
-        dateFormat="dd/MM/yyyy"
-      />
       </div>
 
+      {/* Novo calendário horizontal */}
+      <CalendarWeek selectedDate={selectedDate} onChange={setSelectedDate} />
 
+      {/* Lista de músicas */}
       <div className="space-y-4">
         {songs.map((song, index) => (
           <div
@@ -36,7 +31,9 @@ export const DailyHistory = () => {
                 ♫
               </div>
               <div>
-                <p className="font-semibold text-purple-700 text-sm">{song.title}</p>
+                <p className="font-semibold text-purple-700 text-sm">
+                  {song.title}
+                </p>
                 <p className="text-xs text-gray-500">{song.artist}</p>
               </div>
             </div>

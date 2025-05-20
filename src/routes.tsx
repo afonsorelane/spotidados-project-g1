@@ -26,6 +26,11 @@ const router = createBrowserRouter([
     path: "/userData",
     element: <UserData />,
   },
+  {
+    path: "/dailyStats",
+    element: <DailyStats />,
+  },
+  
 ]);
 
 export function Routes() {
