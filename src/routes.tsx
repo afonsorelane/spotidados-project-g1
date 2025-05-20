@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, UserHistoric, Search, Register, Login, UserData } from "./pages";
+import { Home, UserHistoric, Search, Register, Login, } from "./pages";
 import { DailyStats } from "./pages/dailyStats";
 
 const router = createBrowserRouter([
@@ -23,10 +23,10 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-  {
-    path: "/userData",
-    element: <UserData />,
-  },
+  // {
+  //   path: "/userData",
+  //   element: <UserData />,
+  // },
   {
     path: "/dailyStats",
     element: <DailyStats />,
@@ -37,3 +37,10 @@ const router = createBrowserRouter([
 export function Routes() {
   return <RouterProvider router={router} />;
 }
+
+
+<div>
+  <p>
+    
+  </p>
+</div>

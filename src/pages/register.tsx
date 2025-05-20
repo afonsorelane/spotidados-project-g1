@@ -32,3 +32,11 @@ export const Register = () => {
         </>
     )
 }
+
+
+
+<div>
+  <p>
+    
+  </p>
+</div>

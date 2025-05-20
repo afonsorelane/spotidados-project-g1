@@ -4,7 +4,13 @@ import { Search } from "./search";
 
 import { Register } from "./register";
 import { Login } from "./login";
-import { UserData } from "./userData";
+// import { UserData } from "./userData";
 
-export { Home, UserHistoric, Search, Register, Login, UserData };
+export { Home, UserHistoric, Search, Register, Login,};
 
+
+// <div>
+//   <p>
+    
+//   </p>
+// </div>
