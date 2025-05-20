@@ -32,3 +32,4 @@ export const HistoricFilter = ({ active, setActive }: FilterProps) => {
     </div>
   );
 };
+

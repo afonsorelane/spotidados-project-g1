@@ -14,7 +14,7 @@ export const Home = () => {
     >
       <Header />
 
-      <main className="flex flex-col items-center gap-4 text-white">
+      <main className="h-screen w-full flex flex-col items-center gap-4 text-white">
         <div className="w-[247px] h-[166px] rounded-[16px] border border-white overflow-hidden">
           <img
             src="/img/girl.png"
@@ -31,16 +31,16 @@ export const Home = () => {
 
         <button
           onClick={() => navigate("/login")}
-          className="w-[247px] h-[61px] rounded-[16px] text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition cursor-pointer"
+          className="w-[247px] h-[61px] rounded-[16px] text-lg font-semibold text-white bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition cursor-pointer"
         >
           Login
         </button>
 
-        <section className="grid grid-cols-2 gap-4">
+        <section className="grid grid-cols-2 gap-4 py-8">
           {artists.map((artist) => (
             <div
               key={artist.name}
-              className="w-40 h-56 bg-neutral-900 text-white rounded-xl p-3 hover:bg-neutral-800 transition-all duration-200 cursor-pointer"
+              className="w-40 h-56 bg-purple-800 text-white rounded-xl p-3"
             >
               <img
                 src={artist.image}
