@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ====== VARIÁVEIS DE CORES PERSONALIZADAS ====== */
+@layer base {
+  :root {
+    --color-primary: #7c3aed; /* roxo principal */
+    --color-secondary: #c084fc; /* roxo claro */
+    --color-accent: #ec4899; /* rosa */
+    --color-bg: #0f172a; /* azul escuro */
+    --color-surface: #1e293b; /* cinza azulado */
+    --color-text: #f8fafc; /* branco */
+  }
+}
+
+/* ====== COMPONENTES REUTILIZÁVEIS ====== */
+@layer components {
+  /* Botão principal */
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-4 rounded-lg hover:brightness-110 transition;
+  }
+
+  /* Botão secundário */
+  .btn-secondary {
+    @apply border border-white text-white py-2 px-4 rounded-lg hover:bg-white hover:text-purple-700 transition;
+  }
+
+  /* Input padrão */
+  .input-default {
+    @apply w-full bg-white bg-opacity-10 border border-purple-300 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500;
+  }
+
+  /* Cartões */
+  .card {
+    @apply bg-white bg-opacity-10 backdrop-blur-md p-4 rounded-xl border-2 border-purple-300 shadow-md hover:shadow-lg transition;
+  }
+
+  /* Título principal */
+  .title {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-purple-100 text-center;
+  }
+
+  /* Texto informativo */
+  .text-muted {
+    @apply text-sm text-gray-400;
+  }
+}
+
+
+
+@layer components {
+  /* Botão primário colorido */
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-4 rounded-lg hover:brightness-110 transition;
+  }
+
+  /* Botão secundário com borda */
+  .btn-secondary {
+    @apply border border-white text-white py-2 px-4 rounded-lg hover:bg-white hover:text-purple-700 transition;
+  }
+
+  /* Botão de filtro (usado no componente HistoricFilter) */
+  .btn-filter-active {
+    @apply bg-purple-800 text-white px-4 py-2 rounded-xl font-semibold;
+  }
+
+  .btn-filter-inactive {
+    @apply bg-white text-gray-500 px-4 py-2 rounded-xl font-semibold;
+  }
+
+
+    /* Campo de input padrão */
+  .input-default {
+    @apply w-full bg-white bg-opacity-10 border border-purple-300 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500;
+  }
+
+
+
+    /* Cartão geral */
+  .card {
+    @apply bg-white bg-opacity-10 backdrop-blur-md p-4 rounded-xl border-2 border-purple-300 shadow-md hover:shadow-lg transition;
+  }
+
+  /* Bloco de música diária, semanal ou mensal */
+  .music-block {
+    @apply flex justify-between items-center bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl border-2 border-purple-300;
+  }
+
+  .music-icon {
+    @apply bg-white rounded-full h-8 w-8 flex items-center justify-center text-purple-700 font-bold;
+  }
+
+  .music-title {
+    @apply font-semibold text-purple-700 text-sm;
+  }
+
+  .music-subtitle {
+    @apply text-xs text-gray-500;
+  }
+
+  .music-plays {
+    @apply bg-white text-purple-800 px-3 py-1 rounded-md font-bold;
+  }
+
+
+    /* Título principal */
+  .title {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-purple-100 text-center;
+  }
+
+  /* Título de sessão */
+  .section-title {
+    @apply bg-white text-purple-800 font-bold px-6 py-2 rounded-md text-center;
+  }
+
+  /* Texto informativo menor */
+  .text-muted {
+    @apply text-sm text-gray-400;
+  }
+
+
+    /* Dia selecionado */
+  .day-active {
+    @apply bg-white text-purple-800 font-bold shadow-md;
+  }
+
+  /* Dia normal */
+  .day-default {
+    @apply text-white hover:bg-white/20;
+  }
+}
+
+
+
+/* 
+<div>
+  <p>
+    
+  </p>
+</div> */
