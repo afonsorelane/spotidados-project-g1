@@ -31,7 +31,7 @@ export const Login = () => {
 
   return (
     <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      className="flex items-center justify-center min-h-screen bg-cover bg-center dark:bg-black"
       style={{ backgroundImage: `url('/img/backgroud-img.jpg')` }}
     >
       <div>

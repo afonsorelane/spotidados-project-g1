@@ -15,7 +15,7 @@ export const Home = () => {
       <Header />
 
       <main className="flex flex-col items-center text-white px-4 py-8">
-        {/* Imagem central */}
+    
         <div className="w-[247px] h-[166px] rounded-2xl border border-white overflow-hidden mb-4">
           <img
             src="/img/girl.png"
@@ -24,14 +24,14 @@ export const Home = () => {
           />
         </div>
 
-        {/* Frase de chamada */}
+
         <div className="text-center mb-6">
           <p className="text-lg font-medium">Veja aqui as músicas</p>
           <p className="text-lg font-medium">mais escutadas</p>
           <p className="text-lg font-medium">ao redor do mundo</p>
         </div>
 
-        {/* Botão de login */}
+    
         <button
           onClick={() => navigate("/login")}
           className="w-[247px] h-[61px] rounded-2xl text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition mb-10"
@@ -39,7 +39,7 @@ export const Home = () => {
           Login
         </button>
 
-        {/* Galeria de artistas */}
+   
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 py-4">
           {artists.map((artist) => (
             <div

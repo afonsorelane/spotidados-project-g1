@@ -10,17 +10,6 @@ export const DailyStats = () => {
     addDays(weekStart, i)
   );
 
-  // const topListeners = [
-  //   { name: "João Massango", plays: 127 },
-  //   { name: "Nome do Usuário", plays: 115 },
-  //   { name: "Nome do Usuário", plays: 108 },
-  //   { name: "Nome do Usuário", plays: 99 },
-  //   { name: "Nome do Usuário", plays: 93 },
-  //   { name: "Nome do Usuário", plays: 88 },
-  //   { name: "Nome do Usuário", plays: 84 },
-  //   { name: "Nome do Usuário", plays: 81 },
-  //   { name: "Nome do Usuário", plays: 76 },
-  // ];
 
     const songs = [
     { title: "Abana", artist: "Dama do Bling", plays: 20 },
@@ -46,12 +35,12 @@ export const DailyStats = () => {
         <h1 className="text-xl font-bold">Histórico Diário</h1>
       </div> */}
 
-      {/* Cabeçalho */}
+    
        <div className="flex justify-center py-4">
         <h1 className="text-xl font-bold">Histórico Diário</h1>
       </div>
 
-      {/* Navegação de datas */}
+      
       <div className="bg-white bg-opacity-10 p-4 rounded-xl mb-6">
         <p className="font-semibold  text-gray-500 text-lg mb-2">
           {format(selectedDate, "MMMM, yyyy")}
@@ -77,7 +66,7 @@ export const DailyStats = () => {
         </div>
       </div>
 
-      {/* Bloco estatístico */}
+    
       <div className="bg-white bg-opacity-10 backdrop-blur-md p-4 rounded-xl mb-6 space-y-1   text-gray-500 text-sm">
         <p>
           Total listening time:{" "}
@@ -96,7 +85,7 @@ export const DailyStats = () => {
    
       </div>
 
-      {/* Ranking das musicas */}
+
       <div className="space-y-2">
         {songs.map((song, index) => (
           <div

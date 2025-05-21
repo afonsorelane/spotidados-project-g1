@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { users } from "../data/users";
-import { FooterUser } from "../components/FooterUser";
+import { FooterUser } from "../components/footerUser";
 
 export const UserData = () => {
   const [user, setUser] = useState<null | (typeof users)[0]>(null);
