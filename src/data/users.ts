@@ -31,10 +31,10 @@ export const users: User[] = [
   },
   {
     id: 5,
-    name: "Moises Andre",
-    email: "moises@mail.com",
+    name: "Moises Ngovene",
+    email: "ngovene@mail.com",
     phone: "+258846789012",
-    password: "Senha555",
+    password: "876607576",
   },
   {
     id: 6,

@@ -69,14 +69,14 @@ export const DailyStats = () => {
     
       <div className="bg-white bg-opacity-10 backdrop-blur-md p-4 rounded-xl mb-6 space-y-1   text-gray-500 text-sm">
         <p>
-          Total listening time:{" "}
+          Tempo total de escuta:{" "}
           <span className="font-bold text-purple-700">2h43min</span>
         </p>
         <p>
-          Total listened artists: <span className="font-bold text-purple-700">8</span>
+         Total de artistas ouvidos: <span className="font-bold text-purple-700">8</span>
         </p>
         <p>
-          Total listened songs: <span className="font-bold text-purple-700">31</span>
+          Total de músicas ouvidas: <span className="font-bold text-purple-700">31</span>
         </p>
         <p>
           Most listened song:{" "}

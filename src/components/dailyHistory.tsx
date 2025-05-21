@@ -79,23 +79,23 @@ export const DailyHistory = ({ userId }: Props) => {
       <div className="bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl mb-6 space-y-1 text-gray-600 text-sm border-2 border-purple-300">
         <p className="font-semibold text-purple-700 text-lg">Resumo</p>
         <p>
-          Total listening time:{" "}
+          Tempo total de escuta:{" "}
           <span className="font-semibold text-purple-700">
             {Math.floor(totalTime / 60)}h{totalTime % 60}min
           </span>
         </p>
         <p>
-          Total listened artists:{" "}
+         Total de artistas ouvidos:{" "}
           <span className="font-semibold text-purple-700">{uniqueArtists}</span>
         </p>
         <p>
-          Total listened songs:{" "}
+          Total de músicas ouvidas:{" "}
           <span className="font-semibold text-purple-700">
             {detailedSongs.length}
           </span>
         </p>
         <p>
-          Most listened song:{" "}
+         Música mais ouvida:{" "}
           <span className="font-semibold text-purple-700">{mostPlayed}</span>
         </p>
       </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, FacebookLogo, GoogleLogo, Lock, SpotifyLogo, User } from "phosphor-react";
 import { useNavigate } from "react-router-dom";
-    
+   
 
 import { users } from "../data/users";
 
@@ -31,7 +31,7 @@ export const Login = () => {
 
   return (
     <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center dark:bg-black"
+      className="flex items-center justify-center min-h-screen bg-cover bg-center"
       style={{ backgroundImage: `url('/img/backgroud-img.jpg')` }}
     >
       <div>
@@ -57,7 +57,7 @@ export const Login = () => {
           <div className="mb-4">
             <label className="flex items-center text-gray-300 text-sm mb-1">
               <User className="mr-2" />
-              Email or Number
+              Email or Número
             </label>
             <input
               className="w-full bg-transparent border border-gray-600 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -73,12 +73,12 @@ export const Login = () => {
             <label className="flex items-center text-white text-sm mb-1">
               <Lock className="mr-2"/>
               
-                Password    
+                Senha  
             </label>
             <input
               className="w-full bg-transparent border border-gray-600 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500"
               type="password"
-              placeholder="password ..."
+              placeholder="Senha ..."
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -88,10 +88,10 @@ export const Login = () => {
           <div className="flex justify-between items-center mb-6 text-sm text-white">
             <label className="flex items-center">
               <input type="checkbox" className="mr-1 gap-0.5" />
-               <span>Remind me</span> 
+               <span>Me lembre</span> 
             </label>
             <a href="#" className="text-white hover:underline ">
-              <span style={{ marginLeft: '16px' }}>Forgot your password?</span>
+              <span style={{ marginLeft: '16px' }}>Esqueceu sua senha?</span>
             </a>
           </div>
 
@@ -101,7 +101,7 @@ export const Login = () => {
 
           {loggedInUser && (
             <div className="text-green-400 text-sm mb-3 text-center">
-              Welcome, {loggedInUser}!
+              Bem-vindo(a), {loggedInUser}!
             </div>
           )}
 
@@ -112,7 +112,7 @@ export const Login = () => {
             Log In
           </button>
 
-          <div className="text-center mb-4 text-white">Or continue in with</div>
+          <div className="text-center mb-4 text-white">Ou continue com</div>
 
           <div className="flex justify-center">
           <button
@@ -132,9 +132,9 @@ export const Login = () => {
         </div>
 
           <p className="text-center mt-6 text-sm text-white">
-            Don't have an account yet?{" "}
+            Ainda não tem conta?{" "}
             <a href="/register" className="text-violet-400 hover:underline">
-             Sign up
+              Cadastre-se
             </a>
           </p>
         </form>
