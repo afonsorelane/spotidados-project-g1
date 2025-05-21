@@ -8,11 +8,3 @@ createRoot(document.getElementById("root")!).render(
     <Routes />
   </StrictMode>
 );
-
-
-
-<div>
-  <p>
-    
-  </p>
-</div>
