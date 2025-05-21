@@ -1,97 +1,109 @@
 import { useState } from "react";
 import {
-  startOfMonth,
   addDays,
   format,
-  isSameWeek,
   startOfWeek,
+  endOfWeek,
+  isWithinInterval,
 } from "date-fns";
 
-export const WeeklyHistory = () => {
-  const [selectedWeekStart, setSelectedWeekStart] = useState(
-    startOfWeek(new Date(), { weekStartsOn: 0 })
-  );
+import { songs } from "../data/songs";
+import { listeningHistory } from "../data/userSongs";
 
-  const monthStart = startOfMonth(new Date());
+type Props = {
+  userId: number;
+};
 
+export const WeeklyHistory = ({ userId }: Props) => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
-  const weeks = Array.from({ length: 4 }).map((_, i) =>
-    addDays(startOfWeek(monthStart, { weekStartsOn: 0 }), i * 7)
-  );
+  const weekStart = startOfWeek(selectedDate, { weekStartsOn: 0 });
+  const weekEnd = endOfWeek(selectedDate, { weekStartsOn: 0 });
 
-  const getWeekDays = (weekStart: Date) =>
-    Array.from({ length: 7 }).map((_, i) => addDays(weekStart, i));
+  const entries = listeningHistory.filter((entry) => {
+    const date = new Date(entry.playedAt);
+    return (
+      entry.userId === userId &&
+      isWithinInterval(date, { start: weekStart, end: weekEnd })
+    );
+  });
 
-  const songs = [
-    { weekDay: "Domingo", title: "Abana", artist: "Dama do Bling", plays: 20 },
-    { weekDay: "Segunda-feira", title: "Shape of You", artist: "Ed Sheeran", plays: 18 },
-    { weekDay: "Terça-feira", title: "Jerusalema", artist: "Master KG", plays: 15 },
-    { weekDay: "Quarta-feira", title: "Ni Txati Mina", artist: "Lizha James", plays: 13 },
-    { weekDay: "Quinta-feira", title: "Falling", artist: "Harry Styles", plays: 12 },
-    { weekDay: "Sexta-feira", title: "Vão Ter Que Aguentar", artist: "Laylizzy", plays: 10 },
-    { weekDay: "Sábado", title: "Senhor Incrível", artist: "Deejay Telio", plays: 9 },
-  ];
+  const detailedSongs = entries
+    .map((entry) => {
+      const song = songs.find((s) => s.id === entry.songId);
+      return song ? { ...song, playedAt: entry.playedAt } : null;
+    })
+    .filter(Boolean) as ((typeof songs)[0] & { playedAt: string })[];
+
+  const songCount: Record<string, number> = {};
+  detailedSongs.forEach((song) => {
+    songCount[song.title] = (songCount[song.title] || 0) + 1;
+  });
+
+  const rankedSongs = Object.entries(songCount)
+    .sort((a, b) => b[1] - a[1])
+    .map(([title, plays]) => {
+      const song = detailedSongs.find((s) => s.title === title)!;
+      return {
+        title,
+        artist: song.artist,
+        plays,
+      };
+    });
+
+  const totalTime = detailedSongs.reduce((acc, song) => acc + song.duration, 0);
+  const uniqueArtists = new Set(detailedSongs.map((s) => s.artist)).size;
+  const mostPlayed = rankedSongs[0]?.title ?? "-";
 
   return (
-    <div className="p-4 space-y-6 text-white font-sans max-w-3xl mx-auto">
-      {/* Título */}
-      <div className="flex justify-center">
-        <h1 className="text-2xl font-bold text-purple-100">Histórico Semanal</h1>
+    <div className="p-4 space-y-6 text-white font-sans">
+      <div className="flex justify-between items-center text-gray-300">
+        <button
+          onClick={() => setSelectedDate((prev) => addDays(prev, -7))}
+          className="text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20"
+        >
+          ← Semana anterior
+        </button>
+        <span className="text-sm">
+          {format(weekStart, "dd MMM")} - {format(weekEnd, "dd MMM yyyy")}
+        </span>
+        <button
+          onClick={() => setSelectedDate((prev) => addDays(prev, 7))}
+          className="text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20"
+        >
+          Próxima semana →
+        </button>
       </div>
 
-      {/* Cabeçalho do calendário */}
-      <div className="space-y-2 bg-opacity-20 backdrop-blur-md p-2">
-        <p className="font-semibold text-gray-400 text-lg mb-1">
-          {format(new Date(), "MMMM, yyyy")}
-        </p>
-
-        <div className="flex justify-between text-sm text-gray-400 px-1">
-          {["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"].map((day) => (
-            <div key={day} className="text-center w-10">
-              {day}
-            </div>
-          ))}
-        </div>
-s
-        {weeks.map((weekStart, index) => {
-          const days = getWeekDays(weekStart);
-          const isSelected = isSameWeek(weekStart, selectedWeekStart, { weekStartsOn: 0 });
-
-          return (
-            <div
-              key={index}
-              onClick={() => setSelectedWeekStart(weekStart)}
-              className={`flex justify-between text-sm rounded-lg px-1 py-2 cursor-pointer ${
-                isSelected
-                  ? "bg-white text-purple-800 font-bold shadow"
-                  : "text-gray-500 hover:bg-white/10"
-              }`}
-            >
-              {days.map((day) => (
-                <div key={day.toISOString()} className="text-center w-10">
-                  <p>{format(day, "d")}</p>
-                </div>
-              ))}
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Resumo da semana */}
-      <div className="bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl space-y-1 text-sm text-gray-600 border-2 border-purple-300">
+      <div className="bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl mb-6 space-y-1 text-gray-600 text-sm border-2 border-purple-300">
         <p className="font-semibold text-purple-700 text-lg">Resumo</p>
-        <p>Total de tempo de escuta: <span className="font-semibold text-purple-700">14h50min</span></p>
-        <p>Total de artistas ouvidos: <span className="font-semibold text-purple-700">12</span></p>
-        <p>Total de músicas escutadas: <span className="font-semibold text-purple-700">64</span></p>
-        <p>Música mais ouvida: <span className="font-semibold text-purple-700">Abana - Dama do Bling</span></p>
+        <p>
+          Tempo total de escuta:{" "}
+          <span className="font-semibold text-purple-700">
+            {Math.floor(totalTime / 60)}h{totalTime % 60}min
+          </span>
+        </p>
+        <p>
+          Artistas escutados:{" "}
+          <span className="font-semibold text-purple-700">{uniqueArtists}</span>
+        </p>
+        <p>
+          Músicas escutadas:{" "}
+          <span className="font-semibold text-purple-700">
+            {detailedSongs.length}
+          </span>
+        </p>
+        <p>
+          Música mais tocada:{" "}
+          <span className="font-semibold text-purple-700">{mostPlayed}</span>
+        </p>
       </div>
 
-      {/* Lista de músicas */}
       <div className="space-y-2">
-        {songs.map((song, index) => (
+        {rankedSongs.map((song, index) => (
           <div
             key={index}
-            className="flex justify-between items-center bg-white bg-opacity-20 backdrop-blur-md p-3 rounded-xl border-2 border-purple-300"
+            className="flex justify-between items-center bg-white bg-opacity-20 backdrop-blur-md p-2 rounded-xl border-2 border-purple-300"
           >
             <div className="flex items-center gap-4">
               <div className="bg-white rounded-full h-8 w-8 flex items-center justify-center text-purple-700 font-bold">
@@ -101,9 +113,7 @@ s
                 <p className="font-semibold text-purple-700 text-sm">
                   {song.title}
                 </p>
-                <p className="text-xs text-gray-500">
-                  {song.artist} — {song.weekDay}
-                </p>
+                <p className="text-xs text-gray-500">{song.artist}</p>
               </div>
             </div>
             <div className="bg-white text-purple-800 px-3 py-1 rounded-md font-bold">
