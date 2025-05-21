@@ -1,11 +1,10 @@
 import { useState } from "react";
 import {
-  format,
   startOfMonth,
   endOfMonth,
-  subMonths,
-  addMonths,
   isWithinInterval,
+  setMonth,
+  setYear,
 } from "date-fns";
 
 import { songs } from "../data/songs";
@@ -15,11 +14,18 @@ type Props = {
   userId: number;
 };
 
-export const MonthlyHistory = ({ userId }: Props) => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+const months = [
+  "Janeiro", "Fevereiro", "Março", "Abril",
+  "Maio", "Junho", "Julho", "Agosto",
+  "Setembro", "Outubro", "Novembro", "Dezembro"
+];
 
-  const monthStart = startOfMonth(selectedDate);
-  const monthEnd = endOfMonth(selectedDate);
+export const MonthlyHistory = ({ userId }: Props) => {
+  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+
+  const monthStart = startOfMonth(setMonth(setYear(new Date(), selectedYear), selectedMonth));
+  const monthEnd = endOfMonth(monthStart);
 
   const entries = listeningHistory.filter((entry) => {
     const date = new Date(entry.playedAt);
@@ -54,54 +60,80 @@ export const MonthlyHistory = ({ userId }: Props) => {
 
   const totalTime = detailedSongs.reduce((acc, song) => acc + song.duration, 0);
   const uniqueArtists = new Set(detailedSongs.map((s) => s.artist)).size;
-  const mostPlayed = rankedSongs[0]?.title ?? "-";
+  const mostPlayed = rankedSongs[0];
 
   return (
     <div className="p-4 space-y-6 text-white font-sans">
+   
       <div className="flex justify-center">
-        <h1 className="text-2xl font-bold">Histórico Mensal</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-purple-100">Histórico Mensal</h1>
       </div>
 
-      <div className="flex justify-between items-center text-gray-300">
+      
+      <div className="flex justify-center gap-1 items-center">
         <button
-          onClick={() => setSelectedDate((prev) => subMonths(prev, 1))}
-          className="text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20"
+          onClick={() => setSelectedYear((prev) => prev - 1)}
+          className="text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20 text-gray-300"
         >
-          ← Mês anterior
+          ← Ano anterior
         </button>
-        <span className="text-sm">{format(monthStart, "MMMM yyyy")}</span>
+        <span className="text-white font-semibold">{selectedYear}</span>
         <button
-          onClick={() => setSelectedDate((prev) => addMonths(prev, 1))}
-          className="text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20"
+          onClick={() => setSelectedYear((prev) => prev + 1)}
+          className="text-sm bg-white/10 px-3 py-1 rounded hover:bg-white/20 text-gray-300"
         >
-          Próximo mês →
+          Próximo ano →
         </button>
       </div>
 
-      <div className="bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl mb-6 space-y-1 text-gray-600 text-sm border-2 border-purple-300">
-        <p className="font-semibold text-purple-700 text-lg">Resumo</p>
+     
+      <div className="grid grid-cols-4 gap-1 bg-opacity-20 backdrop-blur-md p-1 rounded-xl">
+        {months.map((month, index) => {
+          const isActive = index === selectedMonth;
+          return (
+            <div
+              key={month}
+              onClick={() => setSelectedMonth(index)}
+              className={`cursor-pointer text-center py-2 rounded-lg text-sm ${
+                isActive
+                  ? "bg-white text-purple-800 font-bold shadow"
+                  : "text-gray-400 hover:bg-white/10"
+              }`}
+            >
+              {month}
+            </div>
+          );
+        })}
+      </div>
+
+
+      <div className="bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl space-y-1 text-sm text-gray-600 border-2 border-purple-300">
+        <p className="font-semibold text-purple-700 text-lg">
+          Resumo de {months[selectedMonth]} {selectedYear}
+        </p>
         <p>
-          Tempo total de escuta:{" "}
+          Total de tempo de escuta:{" "}
           <span className="font-semibold text-purple-700">
             {Math.floor(totalTime / 60)}h{totalTime % 60}min
           </span>
         </p>
         <p>
-          Artistas escutados:{" "}
+          Total de artistas ouvidos:{" "}
           <span className="font-semibold text-purple-700">{uniqueArtists}</span>
         </p>
         <p>
-          Músicas escutadas:{" "}
-          <span className="font-semibold text-purple-700">
-            {detailedSongs.length}
-          </span>
+          Total de músicas escutadas:{" "}
+          <span className="font-semibold text-purple-700">{detailedSongs.length}</span>
         </p>
         <p>
-          Música mais tocada:{" "}
-          <span className="font-semibold text-purple-700">{mostPlayed}</span>
+          Música mais ouvida:{" "}
+          <span className="font-semibold text-purple-700">
+            {mostPlayed ? `${mostPlayed.title} - ${mostPlayed.artist}` : "-"}
+          </span>
         </p>
       </div>
 
+   
       <div className="space-y-2">
         {rankedSongs.map((song, index) => (
           <div
@@ -113,9 +145,7 @@ export const MonthlyHistory = ({ userId }: Props) => {
                 ♫
               </div>
               <div>
-                <p className="font-semibold text-purple-700 text-sm">
-                  {song.title}
-                </p>
+                <p className="font-semibold text-purple-700 text-sm">{song.title}</p>
                 <p className="text-xs text-gray-500">{song.artist}</p>
               </div>
             </div>

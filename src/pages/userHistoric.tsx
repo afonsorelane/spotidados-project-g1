@@ -39,7 +39,7 @@ export const UserHistoric = () => {
       historicFilterComponent = <DailyHistory userId={userId} />;
       break;
     case "week":
-      historicFilterComponent = <WeeklyHistory userId={userId} />;
+      historicFilterComponent = <WeeklyHistory/>;
       break;
     case "month":
       historicFilterComponent = <MonthlyHistory userId={userId} />;
