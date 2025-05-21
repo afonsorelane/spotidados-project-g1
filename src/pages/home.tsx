@@ -57,7 +57,6 @@ export const Home = () => {
           ))}
         </section>
       </main>
-
       <Footer />
     </div>
   );
