@@ -14,33 +14,37 @@ export const Home = () => {
     >
       <Header />
 
-      <main className="h-screen w-full flex flex-col items-center gap-4 text-white">
-        <div className="w-[247px] h-[166px] rounded-[16px] border border-white overflow-hidden">
+      <main className="flex flex-col items-center text-white px-4 py-8">
+        {/* Imagem central */}
+        <div className="w-[247px] h-[166px] rounded-2xl border border-white overflow-hidden mb-4">
           <img
             src="/img/girl.png"
-            alt=""
+            alt="Girl listening to music"
             className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="flex flex-col items-center text-center">
-          <p>Veja aqui as músicas</p>
-          <p>mais escutadas</p>
-          <p>ao redor do mundo</p>
+        {/* Frase de chamada */}
+        <div className="text-center mb-6">
+          <p className="text-lg font-medium">Veja aqui as músicas</p>
+          <p className="text-lg font-medium">mais escutadas</p>
+          <p className="text-lg font-medium">ao redor do mundo</p>
         </div>
 
+        {/* Botão de login */}
         <button
           onClick={() => navigate("/login")}
-          className="w-[247px] h-[61px] rounded-[16px] text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition cursor-pointer"
+          className="w-[247px] h-[61px] rounded-2xl text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:brightness-110 transition mb-10"
         >
           Login
         </button>
 
-        <section className="grid grid-cols-2 gap-4 py-8">
+        {/* Galeria de artistas */}
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 py-4">
           {artists.map((artist) => (
             <div
               key={artist.name}
-              className="w-40 h-56 bg-purple-800 text-white rounded-xl p-3"
+              className="w-40 h-56 bg-purple-800 text-white rounded-xl p-3 shadow-lg hover:scale-105 transition-transform"
             >
               <img
                 src={artist.image}

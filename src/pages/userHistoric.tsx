@@ -32,7 +32,7 @@ export const UserHistoric = () => {
       {/* <Header /> */}
 
       <main>
-        <h1 className="px-2 py-18 text-center text-2xl sm:text-3xl md:text-4xl font-bold text-purple-100 mb-6">
+        <h1 className="px-2 py-5 text-center text-2xl sm:text-3xl md:text-4xl font-bold text-purple-100 mb-6">
           Histórico do Usuário
         </h1>
 

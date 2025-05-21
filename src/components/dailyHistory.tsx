@@ -8,27 +8,18 @@ import { startOfWeek, addDays, format, isSameDay } from "date-fns";
     const weekDays = Array.from({ length: 7 }).map((_, i) =>
       addDays(weekStart, i)
     );
-  
-    // const topListeners = [
-    //   { name: "João Massango", plays: 127 },
-    //   { name: "Nome do Usuário", plays: 115 },
-    //   { name: "Nome do Usuário", plays: 108 },
-    //   { name: "Nome do Usuário", plays: 99 },
-    //   { name: "Nome do Usuário", plays: 93 },
-    //   { name: "Nome do Usuário", plays: 88 },
-    //   { name: "Nome do Usuário", plays: 84 },
-    //   { name: "Nome do Usuário", plays: 81 },
-    //   { name: "Nome do Usuário", plays: 76 },
-    // ];
-  
+
       const songs = [
-      { title: "Abana", artist: "Dama do Bling", plays: 20 },
-      { title: "Falling", artist: "Harry Styles", plays: 12 },
-      { title: "Senhor Incrível", artist: "Deejay Telio", plays: 9 },
-      { title: "Abana", artist: "Dama do Bling", plays: 20 },
-      { title: "Falling", artist: "Harry Styles", plays: 12 },
-      { title: "Senhor Incrível", artist: "Deejay Telio", plays: 9 },
-    ];
+        { title: "Abana", artist: "Dama do Bling", plays: 20 },
+        { title: "Shape of You", artist: "Ed Sheeran", plays: 18 },
+        { title: "Jerusalema", artist: "Master KG", plays: 15 },
+        { title: "Ni Txati Mina", artist: "Lizha James", plays: 13 },
+        { title: "Falling", artist: "Harry Styles", plays: 12 },
+        { title: "Vão Ter Que Aguentar", artist: "Laylizzy", plays: 10 },
+        { title: "Senhor Incrível", artist: "Deejay Telio", plays: 9 },
+        { title: "Attention", artist: "Charlie Puth", plays: 7 },
+      ];
+
   
     return (
       // <div
@@ -44,18 +35,17 @@ import { startOfWeek, addDays, format, isSameDay } from "date-fns";
   
   
         <div className="p-4 space-y-6 text-white font-sans">
-        {/* <div className="flex justify-center">
-          <h1 className="text-xl font-bold">Histórico Diário</h1>
-        </div> */}
+     
   
         {/* Cabeçalho */}
         <div className="flex justify-center">
-        <h1 className="text-xl font-bold">Histórico Diário</h1>
+        <h1 className="text-2xl  font-bold">Histórico Diário</h1>
       </div>
   
         {/* Navegação de datas */}
-        <div className="flex justify-between items-center bg-white bg-opacity-20 backdrop-blur-md p-2 rounded-xl border-2 border-purple-300">
-          <p className="font-semibold  text-gray-500 text-lg mb-2">
+         {/* <div className="flex justify-between items-center bg-white bg-opacity-20 backdrop-blur-md p-2 rounded-xl border-2 border-purple-300"> */}
+        <div className="flex justify-between items-center  bg-opacity-20 backdrop-blur-md p-2 ">
+          <p className="font-semibold  text-gray-400 text-lg mb-2">
             {format(selectedDate, "MMMM, yyyy")}
           </p>
           <div className="flex justify-between text-sm">
@@ -68,7 +58,7 @@ import { startOfWeek, addDays, format, isSameDay } from "date-fns";
                   className={`cursor-pointer text-center w-10 py-2 rounded-lg ${
                     isActive
                       ? "bg-white text-purple-800 font-bold shadow"
-                      : " text-gray-600 hover:bg-white/20"
+                      : " text-gray-400 hover:bg-white/10"
                   }`}
                 >
                   <p>{format(day, "EEE")}</p>
@@ -79,8 +69,13 @@ import { startOfWeek, addDays, format, isSameDay } from "date-fns";
           </div>
         </div>
   
-        {/* Bloco estatístico */}
+
+  
+        {/* resume */}
         <div className="bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl mb-6 space-y-1   text-gray-600 text-sm border-2 border-purple-300">
+            <p className="font-semibold text-purple-700 text-lg">
+            Resume
+          </p>
           <p>
             Total listening time:{" "}
             <span className="font-semibold text-purple-700">2h43min</span>

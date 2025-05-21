@@ -1,9 +1,11 @@
-import{ArrowLeft}from "phosphor-react";
+import{
+    ArrowLeft,
+}from "phosphor-react";
 
 export const Register = () => {
        return(
-        <>
-            <div className=" items-center justify-center min-h-screen bg-cover bg-center" style=
+        
+            <div className=" flex justify-between items-center min-h-screen bg-cover bg-center" style=
                 {{ backgroundImage: `url('/img/backgroud-img.jpg')` }}>
 
                 <div className=" rounded-md p-8 w-full max-w-md">
@@ -46,6 +48,6 @@ export const Register = () => {
                 </div>
                 
             </div>
-        </>
+    
     )
 }
