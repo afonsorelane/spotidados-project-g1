@@ -1,5 +1,5 @@
  import{MagnifyingGlass}from "phosphor-react";
-import { FooterUser } from "../components/FooterUser";
+import { FooterUser } from "../components/footerUser";
 
 
 export const Search = () => {
@@ -9,13 +9,12 @@ export const Search = () => {
       style={{ backgroundImage: `url('/img/backgroud-img.jpg')` }}
     >
       <main className="h-screen w-full py-10">
-        <div className="relative w-full max-w-md">
-       <input type="search" placeholder="Pesquisar" className="flex items-center justify-between px-6 h-[61px] rounded-[16px] border text-lg font-semibold text-white w-full"/>
-          <MagnifyingGlass size={32} className="absolute right-5 top-1/2 -translate-y-1/2 text-white" />
+        <div className="flex items-center justify-between px-6 h-[61px] rounded-[16px] border text-lg font-semibold text-white">
+          <p>Pesquisar....</p>
+          <MagnifyingGlass size={32} />
         </div>
       </main>
       <FooterUser />
-     
     </div>
   );
 };

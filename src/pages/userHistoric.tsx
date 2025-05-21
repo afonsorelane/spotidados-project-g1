@@ -6,7 +6,7 @@ import { HistoricFilter } from "../components/historicFilter";
 import { DailyHistory } from "../components/dailyHistory";
 import { MonthlyHistory } from "../components/monthlyHistoric";
 import { WeeklyHistory } from "../components/weeklyHistory";
-import { FooterUser } from "../components/FooterUser";
+import { FooterUser } from "../components/footerUser";
 
 export const UserHistoric = () => {
   const [active, setActive] = useState<"day" | "week" | "month">("day");
@@ -14,7 +14,7 @@ export const UserHistoric = () => {
   let historicFilterComponent;
   switch (active) {
     case "day":
-      historicFilterComponent = <DailyHistory />;
+      historicFilterComponent = <DailyHistory userId={0} />;
       break;
     case "week":
       historicFilterComponent = <WeeklyHistory />;

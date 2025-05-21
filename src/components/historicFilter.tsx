@@ -5,8 +5,10 @@ export interface FilterProps {
 
 export const HistoricFilter = ({ active, setActive }: FilterProps) => {
   const filterStyle = (isActive: boolean) =>
-    `px-4 py-2 rounded-xl font-semibold ${
-      isActive ? "bg-purple-800 text-white" : "bg-white text-gray-500"
+    `px-4 py-2 rounded-xl font-semibold transition ${
+      isActive
+        ? "bg-purple-800 text-white"
+        : "bg-white text-gray-500 hover:bg-purple-100 hover:text-purple-800"
     }`;
 
   return (

@@ -34,12 +34,12 @@ export const WeeklyHistory = () => {
 
   return (
     <div className="p-4 space-y-6 text-white font-sans max-w-3xl mx-auto">
-      {/* Título */}
+      
       <div className="flex justify-center">
         <h1 className="text-2xl font-bold text-purple-100">Histórico Semanal</h1>
       </div>
 
-      {/* Cabeçalho do calendário */}
+
       <div className="space-y-2 bg-opacity-20 backdrop-blur-md p-2">
         <p className="font-semibold text-gray-400 text-lg mb-1">
           {format(new Date(), "MMMM, yyyy")}
@@ -77,7 +77,7 @@ s
         })}
       </div>
 
-      {/* Resumo da semana */}
+
       <div className="bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl space-y-1 text-sm text-gray-600 border-2 border-purple-300">
         <p className="font-semibold text-purple-700 text-lg">Resumo</p>
         <p>Total de tempo de escuta: <span className="font-semibold text-purple-700">14h50min</span></p>
@@ -86,7 +86,7 @@ s
         <p>Música mais ouvida: <span className="font-semibold text-purple-700">Abana - Dama do Bling</span></p>
       </div>
 
-      {/* Lista de músicas */}
+
       <div className="space-y-2">
         {songs.map((song, index) => (
           <div

@@ -10,7 +10,7 @@ export const MonthlyHistory = () => {
   const currentMonthIndex = new Date().getMonth();
   const [selectedMonth, setSelectedMonth] = useState(currentMonthIndex);
 
-  // Conteúdo fixo para todos os meses
+
   const songs = [
     { title: "Abana", artist: "Dama do Bling", plays: 42 },
     { title: "Shape of You", artist: "Ed Sheeran", plays: 35 },
@@ -26,12 +26,12 @@ export const MonthlyHistory = () => {
 
   return (
     <div className="p-4 space-y-6 text-white font-sans">
-      {/* Título */}
+
       <div className="flex justify-center">
         <h1 className="text-2xl sm:text-3xl font-bold text-purple-100">Histórico Mensal</h1>
       </div>
 
-      {/* Calendário anual */}
+  
       <div className="grid grid-cols-3 gap-2 bg-opacity-20 backdrop-blur-md p-2 rounded-xl">
         
         {months.map((month, index) => {
@@ -52,7 +52,7 @@ export const MonthlyHistory = () => {
         })}
       </div>
 
-      {/* Resumo mensal */}
+   
       
       <div className="bg-white bg-opacity-20 backdrop-blur-md p-4 rounded-xl space-y-1 text-sm text-gray-600 border-2 border-purple-300">
         <p className="font-semibold text-purple-700 text-lg">Resumo de {months[selectedMonth]}</p>
@@ -64,7 +64,7 @@ export const MonthlyHistory = () => {
         </span></p>
       </div>
 
-      {/* Lista de músicas do mês */}
+
       <div className="space-y-2">
         {songs.map((song, index) => (
           <div
