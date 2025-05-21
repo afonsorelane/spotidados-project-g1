@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import{
     ArrowLeft,
 }from "phosphor-react";
 
 export const Register = () => {
+    const navigate = useNavigate();
        return(
         
             <div className=" flex justify-between items-center min-h-screen bg-cover bg-center" style=
@@ -10,7 +12,7 @@ export const Register = () => {
 
                 <div className=" rounded-md p-8 w-full max-w-md">
                     
-                    <div><button className=" flex justify-self-start text-gray-100"><ArrowLeft /></button></div>
+                    <div><button className=" flex justify-self-start text-gray-100 cursor-pointer"onClick={() => navigate("/Login")}><ArrowLeft /></button></div>
 
                     <div>
                         <h1 className = "font-bold text-2xl mt-18 text-gray-100">Sign Up</h1>
