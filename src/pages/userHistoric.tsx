@@ -17,10 +17,10 @@ export const UserHistoric = () => {
       historicFilterComponent = <DailyHistory userId={0} />;
       break;
     case "week":
-      historicFilterComponent = <WeeklyHistory />;
+      historicFilterComponent = <WeeklyHistory userId={0} />;
       break;
     case "month":
-      historicFilterComponent = <MonthlyHistory />;
+      historicFilterComponent = <MonthlyHistory userId={0} />;
       break;
   }
 
