@@ -57,7 +57,7 @@ export const Login = () => {
           <div className="mb-4">
             <label className="flex items-center text-gray-300 text-sm mb-1">
               <User className="mr-2" />
-              Email or Número
+              Email or Number
             </label>
             <input
               className="w-full bg-transparent border border-gray-600 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -101,7 +101,7 @@ export const Login = () => {
 
           {loggedInUser && (
             <div className="text-green-400 text-sm mb-3 text-center">
-              Bem-vindo(a), {loggedInUser}!
+              Welcome, {loggedInUser}!
             </div>
           )}
 
@@ -132,9 +132,9 @@ export const Login = () => {
         </div>
 
           <p className="text-center mt-6 text-sm text-white">
-            Ainda não tem conta?{" "}
+            Don't have an account yet?{" "}
             <a href="/register" className="text-violet-400 hover:underline">
-              Cadastre-se
+             Sign up
             </a>
           </p>
         </form>
